@@ -3,6 +3,7 @@ const router = express.Router() // aqui estou configurando a primeira parte da r
 const { v4: uuid4 } = require('uuid')
 
 const app = express() // aqui estou iniciando o app
+app.use(express.json())
 const porta = 3333 // aqui estou criando a porta
 
 // aqui estou criando lista inicial de mulheres
