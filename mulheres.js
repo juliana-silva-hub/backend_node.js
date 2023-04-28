@@ -5,7 +5,6 @@ const conectaBancoDeDados = require('./bancoDeDados') //aqui estou ligando ao ar
 conectaBancoDeDados() // estou chamando a função que conecta o banco de dados
 
 const Mulher = require('./mulherModel')
-const { cast } = require("cypress/types/bluebird")
 
 const app = express() // aqui estou iniciando o app
 app.use(express.json())
@@ -77,7 +76,7 @@ async function deletaMulher(request, response) {
         console.log(erro)
     }
 } 
-   
+
 app.use(router.get('/mulheres', mostraMulheres)) // configurei rota GET /mulheres
 app.use(router.post('/mulheres', criaMulher)) // configurei rota POST /mulheres
 app.use(router.patch('/mulheres/:id', corrigeMulher)) // configurei rota PATCH /mulheres/:id
