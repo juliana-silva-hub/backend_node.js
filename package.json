@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/juliana-silva-hub/primeiro_projeto_backend#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^7.0.5",
     "uuid": "^9.0.0"
