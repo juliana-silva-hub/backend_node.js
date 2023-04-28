@@ -76,7 +76,8 @@ async function deletaMulher(request, response) {
     } catch(erro) {
         console.log(erro)
     }
-}    
+} 
+   
 app.use(router.get('/mulheres', mostraMulheres)) // configurei rota GET /mulheres
 app.use(router.post('/mulheres', criaMulher)) // configurei rota POST /mulheres
 app.use(router.patch('/mulheres/:id', corrigeMulher)) // configurei rota PATCH /mulheres/:id
