@@ -3,5 +3,7 @@
 
 # Ada Library Information
 *.ali
+
+# códigos ignorados
 .env
-node_modules/
+node_modules
