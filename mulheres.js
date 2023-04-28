@@ -5,35 +5,21 @@ const { v4: uuid4 } = require('uuid')
 const conectaBancoDeDados = require('./bancoDeDados') //aqui estou ligando ao arquivo bancoDeDados
 conectaBancoDeDados() // estou chamando a função que conecta o banco de dados
 
+const Mulher = require('./mulherModel')
+
 const app = express() // aqui estou iniciando o app
 app.use(express.json())
 const porta = 3333 // aqui estou criando a porta
 
-// aqui estou criando lista inicial de mulheres
-const mulheres = [
-    {
-        id: '1',
-        nome: 'Simara Conceição',
-        imagem: 'https://github.com/simaraconceicao.png',
-        minibio: 'Desenvolvedora de Software e Instrutora'
-    },
-    {
-        id: '2',
-        nome: 'Iana Chan',
-        imagem: 'https://bit.ly/3JCXBqP',
-        minibio: 'Fundadora da PrograMaria'
-    },
-    {
-        id: '3',
-        nome: 'Nina da Hora',
-        imagem: 'https://bit,ly/3FKpFaz',
-        minibio: 'Hacker antirracista'
-    }
-]
-
 //GET
-function mostraMulheres(request, response) {
-    response.json(mulheres)
+async function mostraMulheres(request, response) {
+    try{
+        const mulheresVindasDoBancoDeDados = await Mulher.find()
+
+        response.json(mulheresVindasDoBancoDeDados)
+    }catch (erro) {
+        console.log(erro)
+    }
 }
 
 //POST
